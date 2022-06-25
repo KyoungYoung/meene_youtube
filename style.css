@@ -1,0 +1,219 @@
+:root {
+  /* 색 */
+  --white-color: #fff;
+  --black-color: #140a00;
+  --blue-color: #045fd4;
+  --red-color: #ff0000;
+  --grey-dark-color: #909090;
+  --grey-light-color: #e0e0e0;
+
+  /* 크기 */
+  --padding: 12px;
+  --avatar-size: 36px;
+  /* 글자 크기 */
+  --font-large: 18px;
+  --font-medium: 14px;
+  --font-small: 12px;
+  --font-micro: 10px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Roboto;
+}
+ul {
+  list-style: none;
+}
+
+button,
+button:focus {
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+/* header */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--padding);
+  background-color: var(--black-color);
+  color: var(--white-color);
+}
+
+header .logo {
+  font-size: var(--font-large);
+}
+header .logo i {
+  color: var(--red-color);
+}
+header .icons .fa-search {
+  margin-right: var(--padding);
+}
+
+/* 비디오 */
+.player {
+  position: sticky;
+  top: 0;
+  text-align: center;
+  /* background-color: var(--black-color); */
+}
+
+.player iframe {
+  width: 100%;
+}
+body > .info {
+  padding: var(--padding);
+}
+
+.info .metadata .hashtag {
+  display: flex;
+  font-size: var(--font-small);
+  color: var(--blue-color);
+  margin-left: var(--padding);
+  margin-bottom: calc(var(--padding) / 2);
+  margin-top: calc(var(--padding) / 2);
+}
+.info .metadata .hashtag li {
+  margin-right: var(--padding);
+}
+.info .metadata .titleAndButton {
+  display: flex;
+  justify-content: space-between;
+  margin-right: var(--padding);
+}
+.info .metadata .titleAndButton .title {
+  font-size: var(--font-large);
+  margin-left: var(--padding);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.info .metadata .titleAndButton .moreButton {
+  height: 100%;
+}
+
+.info .metadata .views {
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+  margin-left: calc(var(--padding) / 2);
+}
+
+/* 액션태그 */
+.actions {
+  display: flex;
+  justify-content: space-around;
+  margin-top: var(--padding);
+}
+.actions button {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+}
+.actions button i {
+  margin: 0 auto;
+  margin-bottom: calc(var(--padding) / 2);
+  font-size: 16px;
+}
+.actions button i.active {
+  color: var(--blue-color);
+}
+/* 구독 */
+.channelButton {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: calc(var(--padding) / 2);
+  margin-top: calc(var(--padding) / 2);
+  border-top: 1px solid var(--grey-dark-color);
+  border-bottom: 1px solid var(--grey-dark-color);
+}
+.channelButton button {
+  margin-right: var(--padding);
+  border-radius: 10%;
+  background-color: white;
+}
+.channelButton .metadata {
+  display: flex;
+  align-items: center;
+}
+.channelButton .metadata .info {
+  display: flex;
+  flex-direction: column;
+}
+.channelButton .metadata img {
+  margin-bottom: calc(var(--padding) / 2);
+  margin-top: calc(var(--padding) / 2);
+  margin-right: calc(var(--padding) / 2);
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: 50%;
+}
+.channelButton .metadata .info .name {
+  font-size: var(--font-medium);
+}
+.channelButton .metadata .info .subcribers {
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+}
+
+.channelButton .subscribe {
+  text-transform: uppercase;
+  color: var(--red-color);
+}
+
+/* 관련 비디오 */
+.upNext {
+  padding: 0 var(--padding);
+}
+.upNext > .title {
+  font-size: var(--font-medium);
+  color: var(--grey-dark-color);
+  margin-bottom: calc(var(--padding) / 2);
+}
+.upNext .item {
+  display: flex;
+  margin-top: var(--padding);
+}
+.upNext .item .img {
+  flex: 1 1 45%;
+  margin-right: var(--padding);
+}
+.upNext .item .img img {
+  width: 100%;
+  aspect-ratio: 16 / 11;
+}
+
+.upNext .item .moreButton {
+  flex: 1 1 2%;
+  background-color: white;
+}
+.upNext .item .info {
+  flex: 1 1 53%;
+  display: flex;
+  flex-direction: column;
+}
+.upNext .item .info .title {
+  font-size: var(--font-small);
+  margin-bottom: calc(var(--padding) / 2);
+}
+.upNext .item .info .name,
+.upNext .item .info .view {
+  font-size: var(--font-micro);
+  color: var(--grey-dark-color);
+}
+.infoAndUpNext {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .infoAndUpNext {
+    flex-direction: row;
+    margin: var(--padding) 0;
+  }
+}
